@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:500");
+@import url("../fonts/icons/icons.css");
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+.clearfix::after{
+    clear:both;
+    content:"";
+    display:block
+}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,input,select,textarea{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+    text-decoration:none;
+    outline:none
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+    display:block
+}
+body{
+    line-height:1
+}
+ol,ul{
+    list-style:none
+}
+blockquote,q{
+    quotes:none
+}
+blockquote:before,blockquote:after,q:before,q:after{
+    content:"";
+    content:none
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0
+}
+body{
+    background-color:#eef3f6;
+    margin-top:28px;
+    font-family:"Roboto",sans-serif
+}
+.todoApp{
+    width:75%;
+    max-width:850px;
+    min-width:300px;
+    margin:0 auto
+}
+.todoApp__form{
+    background-color:#19ba99;
+    border-radius:10px;
+    padding:19px;
+    position:relative
+}
+.todoApp__form__input{
+    display:block;
+    width:100%;
+    border:0;
+    height:65px;
+    background-color:rgba(255,255,255,0.3);
+    padding:0 75px 0 26px;
+    color:#fff;
+    border-radius:7px;
+    border-top-right-radius:32.5px;
+    border-bottom-right-radius:32.5px;
+    transition:all 300ms
+}
+.todoApp__form__input--error{
+    background-color:#df433c
+}
+.todoApp__form__input::placeholder{
+    color:#fff;
+    font-size:19px;
+    letter-spacing:0.5px
+}
+.todoApp__form__button{
+    position:absolute;
+    right:19px;
+    top:19px;
+    width:65px;
+    height:65px;
+    background-color:#fff;
+    border-radius:50%
+}
+.todoApp__form__button::after{
+    position:absolute;
+    content:"\e802";
+    font-family:icons;
+    color:#19ba99;
+    font-size:28px;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-14px
+}
+.todoApp__list{
+    padding:19px
+}
+.todoApp__list__item{
+    background-color:#fff;
+    margin-bottom:13px;
+    padding:14px;
+    border-radius:6px;
+    display:flex;
+    align-items:center
+}
+.todoApp__list__item--checked .todoApp__list__item__text{
+    text-decoration:line-through rgba(25,186,153,0.85)
+}
+.todoApp__list__item--checked .todoApp__list__item__text::before{
+    content:".";
+    color:#fff
+}
+.todoApp__list__item--checked .todoApp__list__item__text::after{
+    content:".";
+    color:#fff
+}
+.todoApp__list__item--checked .icon--check::after{
+    background-color:#19ba99;
+    color:#fff
+}
+.todoApp__list__item__text{
+    color:black;
+    max-height:65px;
+    overflow:hidden;
+    padding-right:20px;
+    flex-grow:1
+}
+.icon{
+    flex-shrink:0;
+    width:40px;
+    height:40px;
+    display:block;
+    margin-left:24px;
+    position:relative
+}
+.icon::before{
+    content:"";
+    position:absolute;
+    width:1px;
+    height:100%;
+    background-color:#cbd5d2;
+    left:-12px;
+    top:0;
+    pointer-events:none;
+    margin:0
+}
+.icon::after{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-size:28px;
+    color:#19ba99;
+    font-family:icons;
+    margin-top:-14px
+}
+.icon:first-of-type::before{
+    display:none
+}
+.icon--remove::after{
+    content:"\e800";
+    margin-left:-12.25px;
+    color:#cbd5d2
+}
+.icon--remove:hover::after{
+    color:#df433c
+}
+.icon--check::after{
+    content:"\e801";
+    margin-left:-12.89px
+}
+.icon--check:hover::after{
+    background-color:#19ba99;
+    color:#fff
+}
+.icon--circular::after{
+    font-size:13px;
+    border-radius:50%;
+    border:2px solid #19ba99;
+    padding:7px 9px 9px 7px;
+    margin-left:-15px;
+    margin-top:-16px;
+    width:10px;
+    height:10px
+}
+@media screen and (max-width: 550px){
+    .todoApp{
+        width:98%
+    }
+}
